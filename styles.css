@@ -1,0 +1,507 @@
+/* Import custom font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
+
+/* Base Styles */
+* {
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    padding: 0; /* Reset padding */
+    margin: 0; /* Reset margin */
+    font-family: "Vazirmatn", sans-serif; /* Set the default font */
+}
+
+body {
+    text-align: center; /* Center text alignment */
+    background-color: #121212; /* Dark background color */
+    color: #ffffff; /* White text color */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Align items vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.container {
+    max-width: 600px; /* Set a maximum width */
+    width: 100%; /* Full width */
+    padding: 20px; /* Add padding */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    position: relative; /* Position relative for absolute positioning of child elements */
+}
+
+/* Header styles */
+h1 {
+    font-size: 2em; /* Set font size */
+    margin-bottom: 20px; /* Add bottom margin */
+}
+
+/* Level and profit styles */
+.level, .profit {
+    font-size: 1em; /* Set font size */
+    margin: 10px 0; /* Add margin */
+    padding: 8px 16px; /* Add padding */
+    border: 1px solid rgba(100, 21, 189, 0.822); /* Add border with color */
+    border-radius: 8px; /* Round corners */
+}
+
+/* Score styles */
+.score {
+    font-size: 2.4em; /* Set font size */
+    font-weight: 800; /* Set font weight */
+    text-align: center; /* Center text alignment */
+    margin-top: 24px; /* Add top margin */
+}
+
+.score img {
+    width: 32px; /* Set image width */
+}
+
+/* Image styles */
+img {
+    max-width: 100%; /* Set maximum width */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer; /* Change cursor on hover */
+    margin-top: 8px; /* Add top margin */
+    transition: transform 0.3s ease-in-out; /* Smooth scale transition */
+}
+
+img:hover {
+    transform: scale(1.05); /* Scale image on hover */
+}
+
+/* Bottom navigation styles */
+.bottom-navigation {
+    position: fixed; /* Fixed position at the bottom */
+    bottom: 16px; /* Distance from the bottom */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-around; /* Distribute items evenly */
+    background-color: rgba(23, 23, 23, 0.752); /* Background color with transparency */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    border: 1px solid #ffffff; /* Border color */
+    border-radius: 60px; /* Round corners */
+    padding: 8px; /* Add padding */
+    margin: 0 24px; /* Add horizontal margin */
+    z-index: 1000; /* Set stack order */
+}
+
+.bottom-navigation a {
+    color: #ffffff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    width: 100%; /* Full width */
+    font-size: 1em; /* Set font size */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background color and text color */
+}
+
+.bottom-navigation a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Background color on hover */
+}
+
+/* Tab link styles */
+.tab-link {
+    background: none; /* No background */
+    border: 0px solid #ffffff; /* No border */
+    padding: 10px 20px; /* Add padding */
+    cursor: pointer; /* Change cursor on hover */
+    color: #ffffff; /* Text color */
+    margin: 0 4px; /* Add horizontal margin */
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for background and text color */
+    border-radius: 35px; /* Round corners */
+}
+
+/* Active tab link styles */
+.tab-link.current {
+    background-color: #ffffff; /* Background color for active tab */
+    color: #121212; /* Text color for active tab */
+}
+
+/* Tab content styles */
+.tab-content {
+    display: none; /* Hide tab content */
+    margin-top: 20px; /* Add top margin */
+}
+
+.tab-content.current {
+    display: block; /* Show active tab content */
+}
+
+/* Additional styles for tab content title */
+.tab-content-title {
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center items horizontally */
+    gap: 24px; /* Add gap between items */
+    display: flex; /* Use flexbox for layout */
+}
+
+/* Earn item styles */
+.earn-item {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: center; /* Align items vertically */
+    background-color: #333; /* Dark background color */
+    padding: 8px 16px; /* Add padding */
+    margin: 8px 0; /* Add vertical margin */
+    border-radius: 5px; /* Round corners */
+}
+
+.earn-item img {
+    width: 32px; /* Set image width */
+    margin-right: 8px; /* Add right margin */
+}
+
+/* Earn item link styles */
+.earn-item a {
+    background: #941cde; /* Background color */
+    border-bottom: 0.45rem solid rgba(128, 23, 184, 0.822); /* Border color */
+    text-decoration: none; /* Remove underline */
+    color: #400446; /* Text color */
+    font-weight: 600; /* Set font weight */
+    padding: 8px 16px; /* Add padding */
+    border-radius: 4px; /* Round corners */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+/* Button hover effect */
+.earn-item button:hover {
+    background: #ffc800; /* Change background color on hover */
+}
+
+/* Additional styles for earn item text */
+.earn-item span {
+    flex-grow: 1; /* Allow text to grow */
+    text-align: left; /* Align text to the left */
+    margin-left: 16px; /* Add left margin */
+    font-weight: 400; /* Set font weight */
+    align-items: center; /* Align items vertically */
+}
+
+/* Feedback styles */
+#clickFeedback {
+    position: absolute; /* Absolute positioning */
+    display: none; /* Hide feedback by default */
+    font-size: 1.8em; /* Set font size```css
+    font-weight: 600; /* Set font weight */
+    color: #ffffff; /* Text color */
+    padding: 5px; /* Add padding */
+    border-radius: 5px; /* Round corners */
+    pointer-events: none; /* Disable pointer events */
+    transition: opacity 0.5s ease; /* Smooth opacity transition */
+    z-index: 10; /* Set stack order */
+}
+
+/* Animation for click feedback */
+@keyframes moveUpAndFade {
+    0% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* No vertical movement */
+    }
+    100% {
+        opacity: 0; /* Fully transparent */
+        transform: translateY(-80px); /* Move up */
+    }
+}
+
+/* Click feedback styles */
+.click-feedback {
+    position: absolute; /* Absolute positioning */
+    animation: moveUpAndFade 2s forwards; /* Apply animation */
+    pointer-events: none; /* Disable pointer events */
+    font-size: 2rem; /* Set font size */
+    color: #fcfcfc; /* Text color */
+    font-weight: bold; /* Set font weight */
+}
+
+/* Styles for remaining clicks */
+.clicks-left {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center items horizontally */
+    gap: 24px; /* Add gap between items */
+}
+
+/* Dragon egg styles */
+#dragonEgg {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for transform and box-shadow */
+}
+
+#dragonEgg.shake {
+    animation: shake 0.5s; /* Apply shake animation */
+}
+
+/* Shake animation */
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Wrapper styles */
+.wrapper {
+    width: 60%; /* Set width */
+    max-width: 24em; /* Set maximum width */
+    max-height: 100vh; /* Set maximum height */
+    position: fixed; /* Fixed positioning */
+    top: 60%; /* Distance from the top */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center vertically */
+    padding: 3em; /* Add padding */
+    border-radius: 1em; /* Round corners */
+}
+
+/* Wheel styles */
+#wheel {
+    max-height: inherit; /* Set maximum height */
+    width: inherit; /* Set width */
+    padding: 0; /* Remove padding */
+}
+
+/* Wheel container styles */
+.wheel-container {
+    position: relative; /* Relative positioning */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    margin-top: 24px; /* Add top margin */
+}
+
+/* Rotate animation */
+@keyframes rotate {
+    100% { transform: rotate(360deg); /* Complete a full rotation */
+    }
+}
+
+/* Spin button styles */
+#spin-btn {
+    position: absolute; /* Absolute positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the button */
+    height: 26%; /* Set height */
+    width: 26%; /* Set width */
+    border-radius: 50%; /* Round button */
+    cursor: pointer; /* Change cursor on hover */
+    border: 0; /* Remove border */
+    background: radial-gradient(#fdcf3b 50%, #d88a40 85%); /* Radial gradient background */
+    color: #c66e16; /* Text color */
+    text-transform: uppercase; /* Uppercase text */
+    font-size: 1.2em; /* Set font size */
+    letter-spacing: 0.1em; /* Add letter spacing */
+    font-weight: 600; /* Set font weight */
+}
+
+/* Final value styles */
+#final-value {
+    font-size: 1.5em; /* Set font size */
+    text-align: center; /* Center text alignment */
+    margin-top: 1.5em; /* Add top margin */
+    color: #202020; /* Text color */
+    font-weight: 500; /* Set font weight */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.5em; /* Adjust font size */
+    }
+
+    .level, .profit {
+        font-size: 0.9em; /* Adjust font size */
+        padding: 6px 12px; /* Adjust padding */
+    }
+
+    .score {
+        font-size: 1.8em; /* Adjust font size */
+        margin-top: 16px; /* Adjust top margin */
+    }
+
+    .tab-link {
+        padding: 8px 16px; /* Adjust padding */
+        font-size: 0.9em; /* Adjust font size */
+    }
+
+    .earn-item {
+        padding: 6px 12px; /* Adjust padding */
+        margin: 6px 0; /* Adjust vertical margin */
+    }
+
+    .earn-item img {
+        width: 24px; /* Adjust image width */
+    }
+
+    .mining-card {
+        width: 100%; /* Full width */
+    }
+    
+    .container {
+        padding: 10px; /* Adjust padding */
+    }
+
+    .bottom-navigation {
+        padding: 8px 4px; /* Adjust padding */
+        margin: 0 16px; /* Adjust horizontal margin */
+    }
+
+    .tab-content {
+        padding: 10px 0; /* Adjust padding */
+    }
+
+    .clicks-left {
+        flex-direction: column; /* Stack items vertically */
+        gap: 16px; /* Adjust gap */
+    }
+
+    #dragonEgg {
+        width: 80%; /* Adjust width */
+    }
+
+    .wrapper {
+        width: 90%; /* Adjust width */
+        max-width: none; /* Remove maximum width */
+    }
+
+    .wheel-container {
+        margin-top: 16px; /* Adjust top margin */
+    }
+
+    #progress-outer {
+        height: 12px; /* Adjust height */
+    }
+
+    .mining-cards {
+        flex-direction: column; /* Stack cards vertically */
+        gap: 16px; /* Adjust gap */
+    }
+    
+    img {
+        width: 100%; /* Full width */
+    }
+
+    .earn-item img {
+        width: 24px; /* Adjust image width */
+    }
+
+    .mining-card img {
+        width: 100%; /* Full width */
+        margin-bottom: 10px; /* Add bottom margin */
+    }
+
+    .mining-card {
+        padding: 10px; /* Add padding */
+    }
+}
+
+/* Input and button styles */
+input[type="text"] {
+    padding: 10px; /* Add padding */
+    margin: 10px; /* Add margin */
+    width: 200px; /* Set width */
+}
+
+button {
+    padding: 10px 20px; /* Add padding */
+    background-color: #007bff; /* Background color */
+    color: #fff; /* Text color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
+
+/* Progress bar styles */
+#progress-outer {
+    width: 100%; /* Full width */
+    background-color: #f3f4f6; /* Light background color */
+    border-radius: 25px; /* Round corners */
+    margin: 10px 0; /* Add vertical margin */
+    overflow: hidden; /* Hide overflow */
+    height: 16px; /* Set height */
+    position: relative; /* Relative positioning */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+#progress-inner {
+    height: 100%; /* Full height */
+    width: 100%; /* Full width */
+    background: linear-gradient(90deg, #4caf50 0%, #81c784 100%); /* Gradient background */
+    border-radius: 25px 0 0 25px; /* Round corners */
+    text-align: right; /* Right align text */
+    transition: width 0.5s ease-in-out; /* Smooth width transition */
+}
+
+#clicks-text {
+    display: block; /* Display as block */
+    text-align: center; /* Center text alignment */
+    font-size: 18px; /* Set font size */
+    color: #888; /* Text color */
+    position: absolute; /* Absolute positioning */
+    margin: 5px 0; /* Add vertical margin */
+    font-weight: bold; /* Set font weight */
+}
+
+/* Mining Cards Styles */
+.mining-cards {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Wrap cards to the next line */
+    justify-content: center; /* Center cards horizontally */
+    gap: 20px; /* Add gap between cards */
+    margin-top: 16px; /* Add top margin */
+    margin-bottom: 48px; /* Add bottom margin */
+}
+
+.mining-card {
+    background: #fff; /* Set background color */
+    border: 1px solid #ddd; /* Border color */
+    border-radius: 10px; /* Round corners */
+    width: 200px; /* Set width */
+    padding: 0 8px; /* Add horizontal padding */
+    text-align: center; /* Center text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transitions */
+}
+
+.mining-card:hover {
+    transform: translateY(-10px); /* Move up on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.mining-card img {
+    max-width: 100%; /* Full width image */
+    border-radius: 10px; /* Round corners */
+    margin-bottom: 15px; /* Add bottom margin */
+}
+
+.mining-card h3 {
+    margin: 0 auto; /* Center heading */
+    font-size: 1.2em; /* Set font size */
+    color: #121218; /* Text color */
+}
+
+.mining-card p {
+    margin: 10px 0; /* Add vertical margin */
+    color: #777; /* Text color */
+}
+
+.mining-card button {
+    background-color: #4CAF50; /* Background color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding */
+    font-size: 1em; /* Set font size */
+    border-radius: 5px; /* Round corners */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.mining-card button:hover {
+    background-color: #45a049; /* Change background color on hover */
+}

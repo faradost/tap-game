@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Clicker Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.34.1/dist/tsparticles.min.js"></script>
+</head>
+<body>
+
+    <form id="username-form" style="display: none;">
+        <input type="text" id="username" placeholder="Username">
+        <button type="button" id="username-submit">Submit</button>
+    </form>
+
+<div class="container" id="game-container">
+
+    <div class="tab-content-title">
+        <div class="level">Level <span id="level">1</span></div>
+        <p class="profit">Profit per hour: <span id="hourly-profit">0</span></p>
+    </div>
+    <div class="score">
+        <img src="https://img.icons8.com/?size=100&id=A05obJXqB1TJ&format=png&color=000000" alt="Score Icon">
+        <span id="score">0</span>
+    </div>
+
+    <div class="bottom-navigation">
+        <a href="#" class="tab-link" data-tab="tab-game">Click</a>
+        <a href="#" class="tab-link" data-tab="tab-earn">Earn</a>
+        <a href="#" class="tab-link" data-tab="tab-ref">Referral</a>
+        <a href="#" class="tab-link" data-tab="tab-spin">Spin</a>
+        <a href="#" class="tab-link" data-tab="tab-mining">Mining</a>
+    </div>
+
+    <div id="tab-game" class="tab-content current">
+        <!-- Remaining clicks -->
+        <div class="clicks-left">
+            <span id="clicks-text">0/500</span>
+            <div id="progress-outer">
+                <div id="progress-inner"></div>
+            </div>
+        </div>
+        
+        <img id="dragonEgg" src="images/level1.png" alt="Dragon Egg" onclick="handleClick(event)" width="400px">
+        <div id="particle-container"></div>
+        <div id="clickFeedback"></div>
+    </div>
+
+    <div id="tab-earn" class="tab-content">
+        <div class="earn-item">
+            <img src="https://img.icons8.com/?size=100&id=k4jADXhS5U1t&format=png&color=000000" width="32px" alt="Telegram">
+            <span>Join Telegram Channel</span>
+            <a id="telegram-btn" href="https://t.me/yourtelegramchannel" target="_blank"
+               onclick="earnCoins(100, 'Telegram', 'telegram-last-earn-time')">+100 Points</a>
+        </div>
+        <div class="earn-item">
+            <img src="https://img.icons8.com/?size=100&id=nj0Uj45LGUYh&format=png&color=000000" width="32px" alt="Instagram">
+            <span>Follow on Instagram</span>
+            <a id="instagram-btn" href="https://www.instagram.com/yourinstagram" target="_blank"
+               onclick="earnCoins(100, 'Instagram', 'instagram-last-earn-time')">+100 Points</a>
+        </div>
+        <div class="earn-item">
+            <img src="https://img.icons8.com/?size=100&id=qLVB1tIe9Ts9&format=png&color=000000" width="32px" alt="YouTube">
+            <span>Subscribe on YouTube</span>
+            <a id="youtube-btn" href="https://www.youtube.com/youryoutubechannel" target="_blank"
+               onclick="earnCoins(100, 'YouTube', 'youtube-last-earn-time')">+100 Points</a>
+        </div>
+        <div id="earn-timer" style="margin-top: 20px; font-size: 1.2em; color: #333;"></div>
+    </div>
+
+    <div id="tab-ref" class="tab-content">
+        <h2> </h2>
+        <label for="inviteLink">Your Referral Link:</label>
+        <input type="text" id="inviteLink" readonly>
+    </div>
+
+    <div id="tab-spin" class="tab-content">
+        <div class="wrapper">
+            <div class="wheel-container">
+                <canvas id="wheel"></canvas>
+                <button id="spin-btn">Spin</button>
+                <img src="images/spinner-arrow-.svg" width="32px" alt="Spinner Arrow"/>
+            </div>
+            <div id="final-value"></div>
+            <div>Remaining Spins: <span id="spin-chances">3</span></div>
+
+            <div id="progress-container">
+                <progress id="spin-progress" value="0" max="100"></progress>
+                <span id="spin-timer">00:00:00</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Mining tab -->
+    <div id="tab-mining" class="tab-content">
+        <h2>All Cards</h2>
+        <div class="mining-cards">
+            <div class="mining-card">
+                <img src="images/level4.jpg" alt="Card 1">
+                <h3>Card 1</h3>
+                <p>Hourly Profit: 10 Points</p>
+                <button onclick="buyCard(1, 10, 100)">Buy - 100 Coins</button>
+            </div>
+            <div class="mining-card">
+                <img src="images/level4.jpg" alt="Card 2">
+                <h3>Card 2</h3>
+                <p>Hourly Profit: 20 Points</p>
+                <button onclick="buyCard(2, 20, 400)">Buy - 400 Coins</button>
+            </div>
+            <!-- Add more cards as needed -->
+        </div>
+    </div>
+
+</div>
+
+<!-- Chart JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<!-- Chart JS Plugin for displaying text over the chart -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
