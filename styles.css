@@ -443,7 +443,6 @@ button:hover {
     text-align: center; /* Center text alignment */
     font-size: 18px; /* Set font size */
     color: #888; /* Text color */
-    position: absolute; /* Absolute positioning */
     margin: 5px 0; /* Add vertical margin */
     font-weight: bold; /* Set font weight */
 }
