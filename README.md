@@ -21,4 +21,4 @@ Make sure you have Git and Node.js installed on your machine.
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/faradost/tapgame.git
+git clone https://github.com/faradost/tap-game.git
